@@ -1,0 +1,3 @@
+dependencies {
+   implementation files('../app/libs/androidtrustsdk.aar')
+}

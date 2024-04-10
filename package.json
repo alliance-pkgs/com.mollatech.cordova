@@ -1,0 +1,20 @@
+{
+  "name": "com.mollatech.cordova.plugin",
+  "version": "1.0.0",
+  "description": "Cordova plugin Mobile Trust",
+  "cordova": {
+    "id": "com.mollatech.cordova.plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "",
+  "license": "UNLICENSED"
+}

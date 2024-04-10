@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	id="com.mollatech.cordova.plugin"
+	version="1.0.0">
+	<name>AxiomMobileTrust</name>
+	<description>Cordova plugin Mobile Trust</description>
+	<license>MIT</license>
+	<keywords>cordova</keywords>
+
+	<js-module src="www/AxiomMobileTrust.js" name="AxiomMobileTrust">
+		<clobbers target="AxiomMobileTrust" />
+	</js-module>
+
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="AxiomMobileTrust">
+				<param name="android-package" value="com.mollatech.cordova.plugin.AxiomMobileTrust" />
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<uses-library android:name="org.apache.http.legacy" android:required="false"/>
+		</config-file>
+		
+		<source-file src="src/android/AxiomMobileTrust.java" target-dir="src/com/mollatech/cordova/plugin/" />
+		<source-file src="src/android/libs/androidtrustsdk.aar" target-dir="libs" />
+		<framework src="src/android/build-axiom.gradle" custom="true" type="gradleReference" />
+	</platform>
+	
+	 <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AxiomMobileTrust">
+                <param name="ios-package" value="AxiomMobileTrust" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/Axiom.h" />
+		<header-file src="src/ios/AxiomException.h" />
+		<header-file src="src/ios/AxiomLocation.h" />
+		<header-file src="src/ios/AxiomMobileTrust.h" />
+		<header-file src="src/ios/AxiomOTPResponse.h" />
+		<header-file src="src/ios/AxiomPKIResponse.h" />
+		<header-file src="src/ios/Device.h" />
+		<header-file src="src/ios/MobilityTrustKickStart.h" />
+		<header-file src="src/ios/MobilityTrustKickStartImpl.h" />
+		<header-file src="src/ios/MobilityTrustVault.h" />
+		<header-file src="src/ios/MobilityTrustVaultImpl.h" />
+		<source-file src="src/ios/Axiom.m" />
+		<source-file src="src/ios/AxiomMobileTrust.m" />
+		<source-file src="src/ios/Device.m" />
+		<source-file src="src/ios/libs/phone/libIOSMobileTrust.a" framework="true" />
+    </platform>
+	
+
+</plugin>
